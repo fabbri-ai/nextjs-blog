@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Footer from "@/components/footer";
+import Header from "@/components/header";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -16,7 +18,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.className} text-zinc-900 bg-zinc-300`}>
+        <Header />
+          {children}
+        <Footer />
+      </body>
     </html>
   );
 }
